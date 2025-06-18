@@ -1,0 +1,5 @@
+whoami -> shows current user 
+id -> shows user setails 
+ip a -> shows ip adress
+ping -c 2 google.coom -> checks network conntectopm 
+chrome +x filename.sh -> make it exectubale 
