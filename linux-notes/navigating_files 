@@ -1,0 +1,13 @@
+cat filename -> just view file 
+nano filename -> view and edit file 
+echo "" >> filename -> print text to file 
+echo -e \e[STYLE;COLOURmblablabla\e[0m -> changes style (bold or underlined ) and colour of text
+pwd -> see all files 
+cd -> change to a different directory 
+cd $HOME -> back to home 
+mkdir foldername -> create folder 
+touch filename -> create file 
+rm -> delete file 
+rmdir -> delete folername empty 
+rm -r -> delete folder and all its content 
+mv -> change location of files and change ame 

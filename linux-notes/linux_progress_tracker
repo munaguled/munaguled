@@ -1,0 +1,70 @@
+Day 1: Files & Navigation
+Cheat Sheet:
+ls           - List files and directories  
+cd           - Change directory  
+pwd          - Print current working directory  
+mkdir        - Make a new directory  
+touch        - Create an empty file  
+tree         - Display directory tree structure (if installed)  
+Mini Project:
+Create a folder called project, navigate into it, create at least 3 files using touch, list them with ls, and view the structure using tree.
+
+Day 2: Managing Files
+Cheat Sheet:
+rm <file>           - Remove a file  
+rmdir <dir>         - Remove an empty directory  
+rm -r <dir>         - Remove a directory and its contents  
+mv <src> <dest>     - Move or rename a file  
+nano <file>         - Open file in terminal editor  
+cat <file>          - Show file contents  
+less <file>         - Scroll through large file contents  
+Mini Project:
+Create a to-do list file, add tasks with nano, view it using cat and less, then delete it with rm.
+
+Day 3: Text & Redirection
+Cheat Sheet:
+echo "text"     - Print text  
+> file.txt      - Overwrite file with output  
+>> file.txt     - Append output to file  
+|               - Pipe output from one command to another  
+Mini Project:
+Create journal.txt, add multiple entries using echo. Redirect and append using > and >>. Use cat and less to view.
+
+Day 4: Permissions & Executables
+Cheat Sheet:
+chmod +x <file>     - Make a script executable  
+ls -l               - View file permissions  
+./script.sh         - Run a local script  
+Mini Project:
+Write a script that prints your name. Make it executable with chmod +x and run it using ./script.sh.
+
+Day 5: Processes & Task Management
+Cheat Sheet:
+ps aux          - Show all running processes  
+sleep 300 &     - Run a command in the background  
+kill <PID>      - Stop a process by PID  
+kill -9 <PID>   - Force kill a process  
+top             - Real-time process monitor  
+head -n 6       - Show first 6 lines of a file  
+Mini Project:
+Start a background task with sleep. Use ps aux and top to view it. Use kill and kill -9 to terminate it.
+
+Day 6: Scripting & Logic with Bash
+Cheat Sheet:
+ps aux --sort=-%mem or ps aux | sort -rk 4     - List processes by memory usage  
+read -p "Prompt" var     - Prompt user for input  
+if [ condition ]; then   - Basic condition  
+elif [ other ]; then     - Extra condition  
+else                     - Fallback  
+kill <PID>               - Kill process  
+$?                       - Exit code of last command  
+&&                       - AND logic  
+||                       - OR logic  
+Mini Projects:
+Project 1: Task Monitor
+Show top memory-using processes, ask for a PID, and try to kill it with feedback.
+Project 2: Smart Process Killer
+Same as above, but now includes advanced logic, $?, and more user feedback.
+Project 3: Bash Multiple Choice Quiz
+Ask questions, get user input, track score, and use if/elif/else logic.
+

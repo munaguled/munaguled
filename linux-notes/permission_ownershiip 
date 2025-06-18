@@ -1,0 +1,15 @@
+permission and ownership 
+each file has perrmissions on who can own it and who can run execute and change it 
+chown newuser filename -> changes file ownder to the  new user
+chgrp group filename -> change file owner to new group 
+chown user:newgroup filename -> changes owner and group 
+7 -> read write and execute    first number (user)
+6 -> read and write            second number (group) 
+5 -> read and execute          third number ( otheres ) 
+4 -> read                   
+0 -> no permissions 
+chmod (number ) filename -> changes permission of which user group or others can run read or write in it 
+ls -l -> can view permissions of all the files you have 
+./file -> run file 
+#!/bin/bash -> makes sure to  turn file into a script 
+

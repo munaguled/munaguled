@@ -1,0 +1,66 @@
+nction called countdown.
+Topic	Skill/Command	Description	Example
+Variables	var=value	Set a variable	name="Ben"
+"${var}"	Access variable with safe quoting	echo "Hello, $name"
+User Input	read -p	Get user input with a prompt	read -p "Enter your name: " name
+Arithmetic	$((...))	Perform math operations	sum=$((2 + 3))
+If Statements	if [ condition ]; then	Start an if block	if [ "$x" -eq 5 ]; then echo "Yes"; fi
+elif, else, fi	Else if, else, and end of if block	elif [ "$x" -gt 5 ]; then ...
+-eq, -lt, -gt	Numeric comparison operators	if [ "$x" -gt 10 ]; then echo "Big"; fi
+String Compare	== or = (strings)	Compare two strings	if [ "$a" == "yes" ]; then echo "okay"; fi
+Loops	while true; do	Infinite loop (until break)	See project below
+while [ condition ]; do	Conditional loop	while [ "$count" -lt 5 ]; do echo $count; done
+for var in list; do	Loop through values	for file in *; do echo "$file"; done
+Break	break	Exit loop early	if [ "$input" == "exit" ]; then break; fi
+Case Statements	case "$var" in ... esac	Pattern matching alternative to if	See below
+Random Number	$RANDOM	Generates random int (0–32767)	number=$((RANDOM % 11 + 20))
+Process Monitor	ps, kill, top	View & manage processes	ps aux --sort=-%mem
+File Info	stat	Show metadata of file	stat -c%s filename.txt shows file size in bytes
+Delete File	rm	Remove a file	rm myfile.txt
+
+
+✅ Projects Completed
+Project	Name	What You Built
+Project 1	Task Monitor Script	Show top memory processes, ask to kill a PID, use ps, kill, and read
+Project 2	Bash Toolkit	Script with menu options using if, read, and functions
+nction called countdown.
+Project 3	Quiz Program	Used case, if, read, scoring logic, and conditions
+Project 4	File Info Script	Loop through files, get their sizes using stat, use for and variables
+Project 5	Interactive While Loop	Created a while true loop that breaks on user input like exit
+🔁 Sample Code Snippets
+
+🟦 If-Else with Numbers
+if [ "$score" -eq 100 ]; then
+    echo "Perfect!"
+elif [ "$score" -gt 60 ]; then
+    echo "Passed!"
+else
+    echo "Failed!"
+fi
+🟩 While True + Break
+while true; do
+    read -p "Type 'exit' to quit: " input
+    if [ "$input" == "exit" ]; then
+        break
+    fi
+    echo "You typed: $input"
+done
+🟨 For Loop Over Files
+for file in *; do
+    size=$(stat -c%s "$file")
+    echo "$file is $size bytes"
+done
+
+
+SLEEP FUNCTIONS IN LOOPS 
+
+🟥 Case Statement
+read -p "Choose A, B, or C: " answer
+
+case "$answer" in
+    A|a) echo "You chose A!" ;;
+    B|b) echo "You chose B!" ;;
+    C|c) echo "You chose C!" ;;
+    *) echo "Invalid option!" ;;
+esac
+

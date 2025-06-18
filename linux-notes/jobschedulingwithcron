@@ -1,0 +1,10 @@
+crontab -l --> to view all cron jobs 
+crontab -e --> edit cron edit file 
+0 12 *** echo "backup complete " >> file   ---> this will every day at 12 pm append back up complete to a file 
+at --> automate one time tasks from a certain amount of minutes from now 
+at now + 1 minute --> waits for your imput end with [ Ctrl +D ] 
+atq -> view pending at jobs 
+atrm (job id ) --> delete a scheduled at job 
+need to use |  between the comands to add at
+type ctrl D when done
+

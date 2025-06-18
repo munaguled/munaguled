@@ -1,0 +1,91 @@
+🧠 Recon & Networking Commands (Explained in Detail)
+
+🔎 nmap
+What it is:
+nmap = Network Mapper. It scans IP addresses or domains to detect live hosts, open ports, running services, and even OS details.
+Basic Use Case:
+In a CTF, you start with a target IP. Use nmap to map out the digital terrain.
+📌 Example:
+nmap 10.10.10.10
+→ Scans the IP for open ports (default 1–1000).
+🔍 nmap -sV
+What it is:
+-sV = service version detection. It doesn’t just tell you a port is open, it tells you what’s running there (e.g. Apache 2.4.29 on port 80).
+Use Case:
+Helps you find vulnerable versions of services (e.g. outdated SSH or Apache).
+📌 Example:
+nmap -sV 10.10.10.10
+→ Shows that port 22 is running OpenSSH 7.6p1.
+🕵️ nmap -A
+What it is:
+Aggressive scan. Includes:
+OS detection (-O)
+Version detection (-sV)
+Script scanning
+Traceroute
+Use Case:
+When you're doing deep reconnaissance and need everything nmap can give.
+⚠️ Be careful:
+Don’t use -A on real targets without permission — it’s noisy.
+📌 Example:
+nmap -A 10.10.10.10
+→ Will tell you the OS type, service versions, and more.
+🌐 whois
+What it is:
+A tool that gets public info about a domain/IP: registrar, contact info, creation date, etc.
+Use Case:
+In OSINT or domain-based CTFs (subdomain discovery, DNS analysis).
+📌 Example:
+whois tryhackme.com
+→ Will show registrar info, DNS servers, and sometimes emails.
+🧭 dig
+What it is:
+DNS lookup tool. Stands for domain information groper.
+Use Case:
+When you want to find the IP address behind a domain, or check DNS records (e.g. A, MX, TXT).
+📌 Example:
+dig tryhackme.com
+→ Gives the IP address of the domain.
+You can also dig subdomains:
+dig admin.tryhackme.com
+🔧 nslookup
+What it is:
+Similar to dig, but older and simpler.
+Use Case:
+Quick DNS checks, often found on Windows too.
+📌 Example:
+nslookup tryhackme.com
+→ Also shows the IP address and DNS resolver used.
+🕳️ nc (netcat)
+What it is:
+A Swiss army knife of networking. You can:
+Connect to ports (client mode)
+Open your own ports (listener/server)
+Transfer files, chat, exploit backdoors
+Use Case:
+Check banner info
+Interact with services directly
+Create reverse shells
+📌 Example:
+nc 10.10.10.10 80
+→ Opens a connection to port 80 (HTTP). You can type raw HTTP requests.
+📡 telnet
+What it is:
+Older than netcat, but useful for talking to ports manually.
+Use Case:
+Same as nc, but sometimes works better with certain services.
+📌 Example:
+telnet 10.10.10.10 21
+→ Connects to the FTP service on port 21.
+🧠 Summary Table
+
+Command	Description	When to Use
+nmap	Scan ports	First step of recon
+nmap -sV	Get service versions	Identify vulnerabilities
+nmap -A	Deep recon	Full fingerprinting
+whois	Domain/IP ownership	OSINT on domains
+dig	DNS info	Find IPs, subdomains
+nslookup	DNS info	Basic DNS lookups
+nc	Talk to ports manually	Banner grabbing, reverse shells
+telnet	Talk to ports (old tool)	Same as nc but older
+
